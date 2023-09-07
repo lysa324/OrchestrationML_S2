@@ -1,0 +1,23 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amr
+spec:
+  selector:
+    matchLabels:
+      app: amr
+  template:
+    metadata:
+      labels:
+        app: amr
+    spec:
+      containers:
+      - name: amr
+        image: lysa122/orchestration_ue:myapp
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 5000
