@@ -21,7 +21,7 @@ def predict():
         if not image_file.filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
             return jsonify(error="Le fichier n'est pas une image valide")
 
-        # Charger l'image depuis le fichier
+        # Charger  l'image depuis le fichier
         image = Image.open(image_file)
 
         with torch.no_grad():
